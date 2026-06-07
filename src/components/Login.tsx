@@ -25,15 +25,17 @@ function Login() {
     const [showPassword, setShowPassword] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [error, setError] = useState('')
+    const DEFAULT_ERROR = 'สวัสดีครับ ระบบพร้อมทำงาน'
+    const [error, setError] = useState(DEFAULT_ERROR)
     const navigate = useNavigate()
+    
 
 
     function handleSubmit() {
         setError('')
 
         if (!email || !password) {
-            setError('กรุณากรอก Email และ Password')
+            setError('* กรุณากรอก Email และ Password')
             return
         }
 
@@ -41,7 +43,7 @@ function Login() {
         if (ok) {
             navigate('/landing')
         } else {
-            setError('Email หรือ Password ไม่ถูกต้อง')
+            setError('* Email หรือ Password ไม่ถูกต้อง')
         }
     }
 
@@ -83,6 +85,7 @@ function Login() {
                             </button>
                         </div>
                     </div>
+                    <label className="error">{error}</label>
 
                     <button className="btn-sign-in" onClick={handleSubmit} >Sign In</button>
                     <div className="sign-up-wrapper">

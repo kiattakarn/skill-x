@@ -122,6 +122,12 @@
   display: inline-block;
 }
 
+.error {
+  color: pink; /* สีแดงสำหรับข้อความ error */
+  font-size: 12px;
+  margin-top: 16px; /* เว้นระยะห่างระหว่างปุ่มกับข้อความ error */
+}
+
 /* --- สไตล์เมื่อหน้าจอใหญ่ขึ้น (Desktop) --- */
 /* 768px หรือ 1024px เป็นขนาดมาตรฐานที่หน้าจอ Tablet/Desktop เริ่มทำงาน */
 @media (min-width: 1024px) {
