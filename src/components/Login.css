@@ -1,0 +1,170 @@
+/* --- สไตล์พื้นฐานสำหรับ Mobile --- */
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #121212;
+}
+
+/* บน Mobile: เราจะสั่งให้ฝั่งซ้าย (Banner รูปภาพ) ซ่อนไปก่อน */
+.login-banner {
+  display: none; 
+  color: red;
+}
+
+/* บน Mobile: ให้กล่องฟอร์มขยายเต็มหน้าจอ */
+.login-form-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 360px; /* ปรับให้ฟอร์มใหญ่ขึ้นตามต้องการ */
+}
+
+.logo {
+  width: 120px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.login-form h2 {
+  color: white; /* สีส้มตรงข้อความ Welcome */
+  font-weight: 700; /* ทำตัวหนังสือ Welcome ให้หนา */
+  margin-bottom: 24px; /* เว้นช่องว่างระหว่าง Welcome กับ Label */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;              /* เว้นระยะห่างระหว่าง Label กับ Input */
+  align-items: flex-start; /* ⚡️ บังคับให้ Label และ Input เริ่มต้นจากฝั่งซ้ายเสมอ */
+  width: 100%;
+}
+
+.input-group label {
+  font-weight: 700; /* ทำตัวหนังสือ label ให้หนา */
+  color: #ffcc99; /* สีส้มอ่อนสำหรับ label */
+}
+
+/* สั่งให้ช่องกรอก (Textbox) ทุกช่องขยายเต็มความกว้างของกลุ่ม */
+.input-group input {
+  width: 100%;
+  padding: 12px 16px;    /* เพิ่มพื้นที่ด้านในช่องกรอกให้ดูหนาและสวยแบบโมเดิร์น */
+  background-color: #1e1e1e; /* สีพื้นหลังกล่องตามดีไซน์ */
+  border: 1px solid #333;    /* เส้นขอบบางๆ */
+  border-radius: 6px;    /* ทำมุมโค้งมนเล็กน้อย */
+  color: #fff;
+  box-sizing: border-box; /* สำคัญมาก: ป้องกันไม่ให้ Padding ดันกล่องจนทะลุขอบกว้างเกิน 100% */
+}
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field input {
+  padding-right: 46px;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #c7c7c7;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.password-toggle:hover {
+  color: #ffffff;
+}
+
+.btn-sign-in {
+  width: 100%;
+  padding: 12px 16px;
+  margin-top: 16px; /* เว้นระยะห่างระหว่างช่องกรอกสุดท้ายกับปุ่ม */
+  background-color: #ff8022; /* สีปุ่มตามดีไซน์ */
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-sign-in:hover {
+  background-color: #e56f12;
+  transform: translateY(-3px);
+}
+
+.sign-up-wrapper {
+  margin-top: 20px;
+}
+
+.sign-up {
+  color: whitesmoke;
+  display: inline-block;
+}
+
+.sign-up-link {
+  color: #ff8022;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* --- สไตล์เมื่อหน้าจอใหญ่ขึ้น (Desktop) --- */
+/* 768px หรือ 1024px เป็นขนาดมาตรฐานที่หน้าจอ Tablet/Desktop เริ่มทำงาน */
+@media (min-width: 1024px) {
+  /* กลับมาแสดงผล Banner ฝั่งซ้าย */
+  .login-banner {
+    display: flex;
+    flex: 1; /* แบ่งพื้นที่คนละครึ่งกับฟอร์ม */
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    background-image: url('path-to-your-image.jpg');
+    background-size: cover;
+    color: whitesmoke;
+    padding-left: 100px;
+  }
+
+  .login-banner h2{
+    color: orange;
+    font-weight: 700;
+  }
+
+  .login-form-wrapper {
+    flex: 1; /* แบ่งพื้นที่คนละครึ่ง */
+  }
+
+  .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;              /* เว้นระยะห่างระหว่าง Label กับ Input */
+  align-items: flex-start; /* ⚡️ บังคับให้ Label และ Input เริ่มต้นจากฝั่งซ้ายเสมอ */
+  width: 100%;
+}
+
+/* สั่งให้ช่องกรอก (Textbox) ทุกช่องขยายเต็มความกว้างของกลุ่ม */
+.input-group input {
+  width: 100%;
+  padding: 12px 16px;    /* เพิ่มพื้นที่ด้านในช่องกรอกให้ดูหนาและสวยแบบโมเดิร์น */
+  background-color: #1e1e1e; /* สีพื้นหลังกล่องตามดีไซน์ */
+  border: 1px solid #333;    /* เส้นขอบบางๆ */
+  border-radius: 6px;    /* ทำมุมโค้งมนเล็กน้อย */
+  color: #fff;
+  box-sizing: border-box; /* สำคัญมาก: ป้องกันไม่ให้ Padding ดันกล่องจนทะลุขอบกว้างเกิน 100% */
+}
+
+}
