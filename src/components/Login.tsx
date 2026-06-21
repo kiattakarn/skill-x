@@ -3,20 +3,28 @@ import { useNavigate } from 'react-router-dom'
 import './Login.css'
 import logo from '../graphics/skill-x-logo.png'
 
-function checkLogin(email: string, password: string): boolean {
+interface User {
+  email: string
+  password: string
+  name: string
+  targetToken: number
+  collectToken: number
+}
+
+function checkLogin(email: string, password: string): User | null  {
     const raw = localStorage.getItem('skillx_users')
-    if (!raw) return false
+    if (!raw) return null
 
     const users = JSON.parse(raw)
 
     for (let i = 0; i < users.length; i++) {
         const user = users[i]
         if (user.email === email && user.password === password) {
-            return true
+            return user
         }
     }
 
-    return false
+    return null
 }
 
 
@@ -28,7 +36,7 @@ function Login() {
     const DEFAULT_ERROR = 'สวัสดีครับ ระบบพร้อมทำงาน'
     const [error, setError] = useState(DEFAULT_ERROR)
     const navigate = useNavigate()
-    
+
 
 
     function handleSubmit() {
@@ -39,8 +47,14 @@ function Login() {
             return
         }
 
-        const ok = checkLogin(email, password)
-        if (ok) {
+        const user = checkLogin(email, password)
+        if (user) {
+            localStorage.setItem('skillx_session', JSON.stringify({
+                email: user.email,
+                name: user.name,
+                targetToken: user.targetToken,
+                collectToken: user.collectToken
+            }))
             navigate('/landing')
         } else {
             setError('* Email หรือ Password ไม่ถูกต้อง')

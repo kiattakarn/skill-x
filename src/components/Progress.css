@@ -1,0 +1,84 @@
+.progress-container {
+  min-height: 100vh;
+  background-color: #121212;
+  color: white;
+  padding-bottom: 80px;
+}
+
+.progress-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 20px 16px;
+  text-align: center;
+}
+
+.hero-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.level-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff8022;
+  margin: 0 0 8px;
+}
+
+.level-quote {
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+.progress-card {
+  background-color: #1e1e1e;
+  border-radius: 16px;
+  margin: 0 16px;
+  padding: 24px;
+}
+
+.token-label {
+  font-size: 0.75rem;
+  color: #888;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.token-row {
+  margin-bottom: 16px;
+}
+
+.token-collect {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff8022;
+}
+
+.token-sep {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 10px;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #ff8022;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.percent-text {
+  color: #aaa;
+  font-size: 0.85rem;
+}

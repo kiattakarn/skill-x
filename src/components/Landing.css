@@ -1,0 +1,223 @@
+.landing-container {
+    background-color: #121212;
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* HERO */
+.hero {
+    background-color: #121212;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    order: -1;
+    /* ดึงรูปขึ้นไปอยู่บนสุด */
+}
+
+.hero-tag {
+    color: #ff8022;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    border: 1px solid #ff8022;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.hero-text h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.hero-highlight {
+    color: #ff8022;
+}
+
+.hero-text p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.hero-btn-coming {
+  background-color: #444;
+  color: #aaa;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: not-allowed;
+  font-weight: 700;
+}
+
+.hero-btn-primary {
+    background-color: #ff8022;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.hero-btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.hero-btn-secondary:hover {
+    border-color: #ff8022;
+    color: #ff8022;
+}
+
+/* FILTER PILLS */
+
+.filter-pills {
+    display: flex;
+    gap: 8px;
+    padding: 16px 20px;
+    overflow-x: auto;
+}
+
+.filter-pills button {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #444;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.filter-pills button.active {
+    background-color: #ff8022;
+    border-color: #ff8022;
+}
+
+.filter-pills button:hover {
+    background-color: #ff8022;
+    border-color: #ff8022;
+    color: #fff;
+}
+
+/* COURSE GRID */
+.course-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 16px 100px 16px;
+}
+
+.course-card {
+    display: flex;
+    gap: 12px;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    align-items: center; 
+}
+
+.course-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.course-card h3 {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.course-card p {
+    font-size: 12px;
+    color: #888;
+}
+
+@media (min-width: 768px) {
+
+    /* Hero */
+
+    .hero {
+        flex-direction: row;
+        /* เรียงข้างกัน */
+        align-items: center;
+        margin: 24px 32px;
+        padding: 40px;
+    }
+
+    .hero-text {
+        flex: 1;
+    }
+
+    .hero-text h2 {
+        font-size: 32px;
+    }
+
+    .hero-image {
+        width: 350px;
+        height: 250px;
+        order: 1;
+        /* รูปกลับไปอยู่ขวา */
+        flex-shrink: 0;
+    }
+
+    /* Filter Pills */
+    .filter-pills {
+        padding: 16px 32px;
+    }
+
+    /* Course Grid — 3 คอลัมน์ */
+    .course-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 32px 40px 32px;
+        gap: 20px;
+    }
+
+    .course-card {
+        flex-direction: column;
+        width: calc(30% - 14px);
+    }
+
+    .course-card img {
+        width: 100%;
+        height: 180px;
+    }
+
+    .course-card h3 {
+        font-size: 16px;
+    }
+
+    .course-card p {
+        font-size: 13px;
+    }
+
+}

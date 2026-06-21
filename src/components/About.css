@@ -1,0 +1,49 @@
+.about-container {
+  min-height: 100vh;
+  background-color: #121212;
+  color: white;
+  padding-bottom: 80px;
+}
+
+.about-title {
+  text-align: center;
+  color: #ff8022;
+  font-size: 1.8rem;
+  padding: 32px 20px 16px;
+}
+
+/* Mobile: แสดง 3 รูป ซ่อน All */
+.team-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 16px;
+}
+
+.team-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+}
+
+.team-desktop {
+  display: none;
+}
+
+/* Desktop: ซ่อน 3 รูป แสดง All */
+@media (min-width: 768px) {
+  .team-mobile {
+    display: none;
+  }
+
+  .team-desktop {
+    display: block;
+    padding: 0 32px;
+  }
+
+  .team-all-img {
+    width: 100%;
+    border-radius: 16px;
+  }
+}
